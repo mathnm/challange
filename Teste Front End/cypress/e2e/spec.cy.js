@@ -6,7 +6,7 @@ describe('template spec', () => {
   })
 
   //Valida href vinculado ao botão sem necessidade de clique
-  it('Valida acesso ao portal de carreiras', () => {
+  it('Deve acessar página de carreiras', () => {
     cy.get('[id="e-n-menu-title-2394"]').should('be.visible').click()
 
     cy.get('[data-id="9212cd1"]').should('be.visible')
@@ -20,7 +20,7 @@ describe('template spec', () => {
   });
 
   //Valida href dos links do rodapé para cada solução utilizando Commands
-  it('Valida acesso a todas as soluções', () => {
+  it('Deve acessar as soluções da NEXDOM', () => {
 
     cy.goTo('/gestao-de-planos-de-saude/', 'Gestão de Planos de Saúde')
     cy.goTo('/autorizacao-e-atendimento/', 'Autorização e Atendimento')
