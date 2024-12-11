@@ -220,7 +220,7 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "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"
+			"token": ""
 		}
 	},
 	"event": [
