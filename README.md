@@ -23,6 +23,6 @@
 	 * Após realizar as duas importações, alterar o ambiente para "GitHub App".
 	 * Nas variáveis de ambiente "GitHub App", setar o valor da variável GITHUB_TOKEN com o código enviado por e-mail.
 * **Executando o Projeto:**
-    * Na coleção importada, clicar nos três pontos e em "Run Colletcion" e confirmar no botão laranja "Run GithubAPITest.
+    * Na coleção importada, clicar nos três pontos e em "Run Collection" e confirmar no botão laranja "Run GithubAPITest.
 * **Verificando resultados:**
     * Ao executar os testes no passo anterior, pelo próprio Postman é possível verificar os resultados dos testes.
