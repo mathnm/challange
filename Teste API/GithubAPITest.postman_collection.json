@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "769527f7-4fef-4faf-99a5-6343a8b6ee6b",
 		"name": "GithubAPITest",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "6793819"
 	},
 	"item": [
@@ -50,7 +50,16 @@
 						}
 					}
 				},
-				"url": "{{basicUrl}}/user/repos"
+				"url": {
+					"raw": "{{basicUrl}}/user/repos",
+					"host": [
+						"{{basicUrl}}"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
 			},
 			"response": []
 		},
@@ -83,7 +92,17 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}"
+				"url": {
+					"raw": "{{basicUrl}}/repos/mathnm/{{repoName}}",
+					"host": [
+						"{{basicUrl}}"
+					],
+					"path": [
+						"repos",
+						"mathnm",
+						"{{repoName}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -131,7 +150,18 @@
 						}
 					}
 				},
-				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}/issues"
+				"url": {
+					"raw": "{{basicUrl}}/repos/mathnm/{{repoName}}/issues",
+					"host": [
+						"{{basicUrl}}"
+					],
+					"path": [
+						"repos",
+						"mathnm",
+						"{{repoName}}",
+						"issues"
+					]
+				}
 			},
 			"response": []
 		},
@@ -166,7 +196,19 @@
 						}
 					}
 				},
-				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}/issues/{{issueNumber}}"
+				"url": {
+					"raw": "{{basicUrl}}/repos/mathnm/{{repoName}}/issues/{{issueNumber}}",
+					"host": [
+						"{{basicUrl}}"
+					],
+					"path": [
+						"repos",
+						"mathnm",
+						"{{repoName}}",
+						"issues",
+						"{{issueNumber}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -189,7 +231,17 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}"
+				"url": {
+					"raw": "{{basicUrl}}/repos/mathnm/{{repoName}}",
+					"host": [
+						"{{basicUrl}}"
+					],
+					"path": [
+						"repos",
+						"mathnm",
+						"{{repoName}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -212,16 +264,30 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}"
+				"url": {
+					"raw": "{{basicUrl}}/repos/mathnm/{{repoName}}",
+					"host": [
+						"{{basicUrl}}"
+					],
+					"path": [
+						"repos",
+						"mathnm",
+						"{{repoName}}"
+					]
+				}
 			},
 			"response": []
 		}
 	],
 	"auth": {
 		"type": "bearer",
-		"bearer": {
-			"token": "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"
-		}
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{GITHUB_TOKEN}}",
+				"type": "string"
+			}
+		]
 	},
 	"event": [
 		{
