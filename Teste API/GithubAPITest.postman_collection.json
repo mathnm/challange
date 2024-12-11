@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "769527f7-4fef-4faf-99a5-6343a8b6ee6b",
+		"name": "GithubAPITest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6793819"
+	},
+	"item": [
+		{
+			"name": "PostRepo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonResponse = pm.response.json();\r",
+							"let repoName = jsonResponse.name;\r",
+							"\r",
+							"pm.collectionVariables.set(\"repoName\", repoName);\r",
+							"\r",
+							"pm.test(\"Repositorio criado com sucesso\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\":\"Teste\",\r\n   \"description\":\"Repositorio postman\",\r\n   \"homepage\":\"https://github.com\",\r\n   \"private\":false,\r\n   \"is_template\":true,\r\n   \"headers\":{\r\n      \"X-GitHub-Api-Version\":\"2022-11-28\"\r\n   }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{basicUrl}}/user/repos"
+			},
+			"response": []
+		},
+		{
+			"name": "GetRepo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de repositório validada com sucesso\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}"
+			},
+			"response": []
+		},
+		{
+			"name": "PostIssue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonResponse = pm.response.json();\r",
+							"let issueNumber = jsonResponse.number;\r",
+							"\r",
+							"pm.collectionVariables.set(\"issueNumber\", issueNumber);\r",
+							"\r",
+							"pm.test(\"Issue criado com sucesso\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"owner\": \"OWNER\",\r\n   \"repo\": \"REPO\",\r\n   \"title\":\"Issue teste\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}/issues"
+			},
+			"response": []
+		},
+		{
+			"name": "GetIssue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de issue validada com sucesso\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}/issues/{{issueNumber}}"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteRepo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Repositorio excluído com sucesso\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}"
+			},
+			"response": []
+		},
+		{
+			"name": "GetExclRepo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Exclusão de repositório validada\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{basicUrl}}/repos/mathnm/{{repoName}}"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "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"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "repoName",
+			"value": ""
+		},
+		{
+			"key": "issueNumber",
+			"value": ""
+		}
+	]
+}

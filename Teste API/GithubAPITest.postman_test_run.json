@@ -1,0 +1,208 @@
+{
+	"id": "bb18b99e-ec61-4ddf-b6e3-18ad1e44475e",
+	"name": "GithubAPITest",
+	"timestamp": "2024-12-11T04:17:35.849Z",
+	"collection_id": "6793819-769527f7-4fef-4faf-99a5-6343a8b6ee6b",
+	"folder_id": 0,
+	"environment_id": "6793819-cb49973e-8dad-454e-934f-ca06b2f5d96a",
+	"totalPass": 6,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-12-11T04:17:32.411Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "9a44d13b-ba2e-4c32-a5d9-317319030455",
+			"name": "PostRepo",
+			"url": "https://api.github.com/user/repos",
+			"time": 1094,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Repositorio criado com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Repositorio criado com sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1094
+			],
+			"allTests": [
+				{
+					"Repositorio criado com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "502bef16-0f4d-424d-8921-82f541538d44",
+			"name": "GetRepo",
+			"url": "https://api.github.com/repos/mathnm/Teste",
+			"time": 224,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Criação de repositório validada com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Criação de repositório validada com sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				224
+			],
+			"allTests": [
+				{
+					"Criação de repositório validada com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "c92bd0e6-a7a7-4761-82ed-ab5761489c85",
+			"name": "PostIssue",
+			"url": "https://api.github.com/repos/mathnm/Teste/issues",
+			"time": 339,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Issue criado com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Issue criado com sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				339
+			],
+			"allTests": [
+				{
+					"Issue criado com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "576ca309-79df-43de-b691-6bbfdf222091",
+			"name": "GetIssue",
+			"url": "https://api.github.com/repos/mathnm/Teste/issues/1",
+			"time": 261,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Criação de issue validada com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Criação de issue validada com sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				261
+			],
+			"allTests": [
+				{
+					"Criação de issue validada com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "5dd337c6-fc4d-42bf-b797-8623a259558f",
+			"name": "DeleteRepo",
+			"url": "https://api.github.com/repos/mathnm/Teste",
+			"time": 395,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Repositorio excluído com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Repositorio excluído com sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				395
+			],
+			"allTests": [
+				{
+					"Repositorio excluído com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "9841e3e7-1528-441a-9d99-3ba4187a1ba2",
+			"name": "GetExclRepo",
+			"url": "https://api.github.com/repos/mathnm/Teste",
+			"time": 180,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Exclusão de repositório validada": true
+			},
+			"testPassFailCounts": {
+				"Exclusão de repositório validada": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				180
+			],
+			"allTests": [
+				{
+					"Exclusão de repositório validada": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2493,
+	"collection": {
+		"requests": [
+			{
+				"id": "9a44d13b-ba2e-4c32-a5d9-317319030455",
+				"method": "POST"
+			},
+			{
+				"id": "502bef16-0f4d-424d-8921-82f541538d44",
+				"method": "GET"
+			},
+			{
+				"id": "c92bd0e6-a7a7-4761-82ed-ab5761489c85",
+				"method": "POST"
+			},
+			{
+				"id": "576ca309-79df-43de-b691-6bbfdf222091",
+				"method": "GET"
+			},
+			{
+				"id": "5dd337c6-fc4d-42bf-b797-8623a259558f",
+				"method": "DELETE"
+			},
+			{
+				"id": "9841e3e7-1528-441a-9d99-3ba4187a1ba2",
+				"method": "GET"
+			}
+		]
+	}
+}
